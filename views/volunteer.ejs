@@ -1,0 +1,149 @@
+<%- include("./partials/header") %>
+<title>Aid | Volunteer</title>
+    <link rel="stylesheet" href="/stylesheets/cover-pic.css">
+    <link rel="stylesheet" href="/stylesheets/volunteer.css">
+
+
+    <div id="cover-pic" style="  background-image: url(../images/donate1.jfif)">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <div class="container" id="pic">
+            <div id="pic-text-one">Volunteer with <b>Aid</b><span style="color:#ffb400">.</span></div>
+            <div id="pic-text-two">Be a AID to the society !</div>
+            <br>
+            <a id="pic-button" class="btn btn-md" href="#Volunteer">VOLUNTEER</a>
+        </div>
+    </div>
+    <div id="Volunteer">
+        <br>
+        <div id="heading">
+            <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+            <lord-icon src="https://cdn.lordicon.com//nndmudsk.json" trigger="loop"
+                colors="primary:#ffffff,secondary:#ffffff" style="width:80px;height:80px">
+            </lord-icon>
+            <br>
+            Volunteer Opportunities
+        </div>
+        <br>
+        <hr>
+        
+        <div id="text">
+            Thank you for your interest in volunteering with AID.Volunteering is a great way to support our mission and
+            to see first-hand the impact you can make. In addition to any specific volunteer positions that may be
+            advertised from time to time, AID often has a need for volunteers with expertise in many different areas –
+            administration, legal, marketing, social media, photography, etc.
+            AID needs your help to continue our programs related to fundraising, special events, education, research,
+            and awareness.
+            <br>
+            <br>
+            Please fill out the Volunteer Application Form below and let us know how you’d like to help.
+        </div>
+    </div>
+    
+    <div class="container" id="form">
+        <b>Volunteer Application Form </b>
+        <br>
+        <br>
+        <form action="/submitform/volunteer" method="POST">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <input required type="text" class="form-control" placeholder="Your Name" name="name">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+
+                        <input required type="text" class="form-control" placeholder="Your Email" name="email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+
+                        <input required type="text" class="form-control" placeholder="City" name="city">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+
+                        <input required type="text" class="form-control" placeholder="Country" name="country">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input required type="text" class="form-control" placeholder="Enter Phone Number " name="phone">
+            </div>
+
+            <div class="form-group">
+                <label>Areas of Interest</label>
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                        <input type="checkbox" id="vehicle1" name="ano">
+                        <small>Grant Searchcers</small><br>
+                    </div>
+                    <div class="col-4">
+                        <input type="checkbox" id="vehicle1" name="ano">
+                        <small>Fund Raising </small><br>
+                    </div>
+                    <div class="col-4">
+                        <input type="checkbox" id="vehicle1" name="ano">
+                        <small>Legal </small><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <input type="checkbox" id="vehicle1" name="ano">
+                        <small>Event Planning </small><br>
+                    </div>
+                    <div class="col-4">
+                        <input type="checkbox" id="vehicle1" name="ano">
+                        <small>Photography</small><br>
+                    </div>
+                    <div class="col-4">
+                        <input type="checkbox" id="vehicle1" name="ano">
+                        <small>Social media</small><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <input type="checkbox" id="vehicle1" name="ano">
+                        <small>Marketing </small><br>
+                    </div>
+                    <div class="col-4">
+                        <input type="checkbox" id="vehicle1" name="ano">
+                        <small>Administration Support</small><br>
+                    </div>
+                    <div class="col-4">
+                        <input type="checkbox" id="vehicle1" name="ano">
+                        <small>Others.</small><br>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Previous Volunteering Experience</label>
+                <textarea required type="text" class="form-control" placeholder="Information"
+                    name="previnfo"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Experience in Area(s) You are Volunteering.</label>
+                <textarea required type="text" class="form-control" placeholder="Information"
+                    name="voluninfo"></textarea>
+            </div>
+            <br>
+            <input type="checkbox" id="vehicle1" name="ano">
+            <small>I understand that volunteering at AID. is an unpaid position with no reimbursement for travel or any other expenses incurred.</small><br>
+            <br>
+            <br>
+
+            <input type="submit" class="btn btn-outline-dark" style="color:orange" value="Apply">
+            
+
+            <br>
+        </form>
+
+    </div>
+    <%- include("./partials/footer") %>

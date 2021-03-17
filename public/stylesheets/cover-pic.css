@@ -1,0 +1,35 @@
+#cover-pic {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* height: calc(100vh - 217px);
+  min-height: 700px; */
+  position: relative;
+  background-attachment: fixed;
+}
+
+#pic {
+  text-align: center;
+  justify-content: center;
+  color: rgb(224, 224, 224);
+}
+#pic-text-one {
+  font-size: 60px;
+}
+
+#pic-text-two {
+  font-size: 20px;
+}
+
+#pic-button {
+  border-radius: 0px;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  transition: all 0.8s linear;
+  letter-spacing: 1px;
+}
+#pic-button:hover {
+  background-color: rgb(212, 212, 212);
+  color: black;
+}

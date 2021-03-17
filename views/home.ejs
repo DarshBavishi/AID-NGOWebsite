@@ -1,0 +1,355 @@
+<%- include("./partials/header") %>
+<title>Aid.</title>
+<link rel="stylesheet" href="/stylesheets/cover-pic.css" />
+<link rel="stylesheet" href="/stylesheets/home.css" />
+
+<div id="cover-pic" style="background-image: url(../images/home.jpg);">
+  <br /><br /><br /><br /><br />
+  <div class="container flash-container my-3">
+    <% if(error && error.length > 0 ) { %>
+    <div class="row d-flex justify-content-between m-2">
+      <div
+        class="alert alert-danger alert-dismissible fade show text-center"
+        role="alert"
+        style="width: 100%"
+      >
+        <%= error %>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <% } %> <% if(success && success.length > 0 ) { %>
+    <div class="row d-flex justify-content-between m-2">
+      <div
+        class="alert alert-success alert-dismissible fade show text-center"
+        role="alert"
+        style="width: 100%"
+      >
+        <%= success %>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <br /><br /><br /><br /><br /><br />
+
+  <div class="container" id="pic">
+    <div id="pic-text-one">
+      Welcome to <b>Aid</b><span style="color: #ffb400">.</span>
+    </div>
+    <div id="pic-text-two">Together we can save the world!</div>
+    <br />
+    <a id="pic-button" class="btn btn-md" href="#info">REQUEST A PRAYER</a>
+  </div>
+</div>
+<div class="container-fluid p-0 m-0 " id="info">
+  <div class="row no-gutters">
+    <div class="col-12 col-lg-7 ">
+      <div class="container-fluid mr-0" id="about">
+        <div class="row justify-content-end">
+          <div class="a col-7">
+            <div class="heading">We need Volunteers in India.</div>
+            <div class="content"> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics</div>
+            <br>
+            <div class="row justify-content-center justify-content-lg-start">
+              <a href="/volunteer" class="btn btn-md btn-warning rounded-0">Volunteer</a>  
+
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div style='background-color:black;' class="col-12 col-lg-5 mt-0 text-center text-lg-left">    
+        <div class="container-fluid" id="about2" >
+          <div class="heading">Donations so far</div>
+          <div class="heading"><i class="fas fa-rupee-sign"></i>10,28,097</div>
+    <br>  
+          <div class="content">
+            Far far away, behind the word mountains, far from the countries Vokalia
+            and Consonantia, there live the blind texts. Separated they live in
+            Bookmarksgrove right at the coast of the Semantics.there live the blind texts. Separated they live in
+            Bookmarksgrove right at the coast of the Semantics.
+          </div>
+          <br />
+          <a href="/donate" class="btn btn-md btn-dark rounded-0"> Donate Now</a>
+          <br>
+          <br> 
+             <br>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid m-0 p-0 jumbotron mt-0 " style="background-color:white;">
+  <div class="container-lg m-0 p-0 mx-auto">
+    <div class="row no-gutters">
+        <% var heading=["Help and Support","Adoption","Volunteering","Education"] %>
+        <% var content=["A small river named Duden flows by their place and supplies.","A small river named Duden flows by their place and supplies.","A small river named Duden flows by their place and supplies.","A small river named Duden flows by their place and supplies."] %>
+        <% icons= ["fas fa-hand-holding-heart fa-3x" ,"fas fa-baby fa-3x","fas fa-people-carry fa-3x","fas fa-book fa-3x"] %>
+        <% for(var i=0;i< 4;i++){ %>
+            <div class=" col-6 col-md-3">
+                <div class="info2">
+                    <br>
+                    <div><span><i class="<%= icons[i] %>"></i> </span></div>
+                    <br>
+                    <div class="heading2"><%= heading[i] %></div>
+                    <br>
+                    <br>
+                    <div class="container">
+                        <%= content[i] %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+  </div>
+</div>
+<hr class="my-0">
+<div class="container-md m-0 py-5 px-0 mx-auto text-center my-3 d-none d-md-block">
+  <div style="width: 95%;" class="row justify-content-center mx-auto pb-3">
+    <div class="col-10 pr-0 heading-section text-center">
+    <h4 class="c-heading mb-4">Let's build a world without child abuse and neglect</h4>
+    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+    </div>
+    </div>
+  <div class="row mx-auto my-auto">
+      <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+          <div class="carousel-inner w-100" role="listbox">
+              <div class="carousel-item active">
+                  <div class="col-4">
+                    <div class="card p-3 text-center border-0">
+                      <div class="hover-outer-box rounded-circle my-2 ">
+                        <img
+                          src="https://preview.colorlib.com/theme/aid/images/causes-1.jpg"
+                          class="card-img-top  rounded-circle "
+                          alt=""
+                          srcset=""
+                        />
+                        <div class="hover-inner-box rounded-circle">
+                          <div class="hover-content"></div>
+                        </div> 
+                      </div>
+                      <h4 class="card-title">Adoption & Fostering </h4>
+              
+                    </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="col-4">
+                    <div class="card p-3 text-center border-0">
+                      <div class="hover-outer-box rounded-circle my-2 ">
+                        <img
+                          src="https://images.unsplash.com/photo-1560885673-2cdc12600ec8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fHBvb3J8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+                          class="card-img-top rounded-circle  "
+                          alt=""
+                          srcset=""
+                        />
+                        <div class="hover-inner-box rounded-circle">
+                          <div class="hover-content"></div>
+                        </div>
+                      </div>
+                      <!-- <img src="/images/c1.jpg" class="card-img-top rounded-circle  " alt="..."> -->
+                      <h4 class="card-title">Endorsing Human Rights</h4>
+              
+                    </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="col-4">
+                    <div class="card p-3 text-center border-0">
+                      <div class="hover-outer-box rounded-circle my-2 ">
+                        <img
+                          src="https://preview.colorlib.com/theme/aid/images/causes-3.jpg"
+                          class="card-img-top rounded-circle  "
+                          alt=""
+                          srcset=""
+                        />
+                        <div class="hover-inner-box rounded-circle">
+                          <div class="hover-content"></div>
+                        </div>
+                      </div>
+                      <!-- <img src="/images/c1.jpg" class="card-img-top rounded-circle  " alt="..."> -->
+                      <h4 class="card-title">Medication and Crisis Services</h4>
+              
+                    </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="col-4">
+                    <div class="card p-3 text-center border-0">
+                      <div class="hover-outer-box rounded-circle my-2 ">
+                        <img
+                          src="https://images.unsplash.com/photo-1522661067900-ab829854a57f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fGVkdWNhdGlvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+                          class="card-img-top rounded-circle  "
+                          alt=""
+                          srcset=""
+                        />
+                        <div class="hover-inner-box rounded-circle">
+                          <div class="hover-content"></div>
+                        </div>
+                      </div>
+                      <h4 class="card-title">Child Care and Education</h4>
+              
+                    </div>              
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="col-4">
+                    <div class="card p-3 text-center border-0">
+                      <div class="hover-outer-box rounded-circle my-2 ">
+                        <img
+                          src="https://preview.colorlib.com/theme/aid/images/causes-5.jpg"
+                          class="card-img-top rounded-circle  "
+                          alt=""
+                          srcset=""
+                        />
+                        <div class="hover-inner-box rounded-circle">
+                          <div class="hover-content"></div>
+                        </div>
+                      </div>
+                      <!-- <img src="/images/c1.jpg" class="card-img-top rounded-circle  " alt="..."> -->
+                      <h4 class="card-title">Youth Leadership</h4>
+              
+                    </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="col-4">
+                    <div class="card p-3 text-center border-0">
+                      <div class="hover-outer-box rounded-circle my-2 ">
+                        <img
+                          src="https://images.unsplash.com/photo-1559294824-627e9738df81?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8d29ybGQlMjBwZWFjZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+                          class="card-img-top rounded-circle  "
+                          alt=""
+                          srcset=""
+                        />
+                        <div class="hover-inner-box rounded-circle">
+                          <div class="hover-content"></div>
+                        </div>
+                      </div>
+                      <!-- <img src="/images/c1.jpg" class="card-img-top rounded-circle  " alt="..."> -->
+                      <h4 class="card-title">Save Earth Programmes</h4>
+              
+                    </div>               
+                  </div>
+              </div>
+          </div>
+          <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
+      </div>
+  </div>
+</div>
+<br class="d-none d-md-block">
+<br class="d-none d-md-block">
+<div class="testimony-section  mt-0 mt-md-5 bg-warning">
+<div class="container w-75 p-0  m-0 mx-auto">
+  <div class="row justify-content-center ">
+      <div class="col-lg-6 pl-5 d-flex">
+        <div class="testimony-img py-5" style="background-image: url('/images/testimony.png');"></div>
+      </div>
+      <div class="col-lg-6 pr-5 text-center text-lg-left">
+        <div class="testimonial-header pt-5">
+          <h2>
+            Success Stories
+          </h2>
+        </div>
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators mt-3">
+            <li style="width: 15px; height: 15px; border-radius: 50%;" data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li style="width: 15px; height: 15px; border-radius: 50%;" data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li style="width: 15px; height: 15px; border-radius: 50%;" data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item mb-5  active" data-interval="3000" >
+              <div class="item w-100">
+                <div class="testimony-wrap pb-4">
+                <div class="text mb-3 ">
+                <p class="mb-4 text-left">
+                  <span class="comma"> "</span>         
+                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                  <span class="comma"> "</span>
+                </p>
+                </div>
+                <div class="d-flex mt-4">
+                <div class="user-img" style="background-image: url('/images/person_1.jpg')">
+                </div>
+                <div class="pos ml-3">
+                <p class="name mb-1">Jeff Nucci</p>
+                <span class="text-muted">Businessman</span>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item mb-5"  data-interval="3000" >
+              <div class="item w-100">
+                <div class="testimony-wrap pb-4">
+                <div class="text mb-3 ">
+                <p class="mb-4">
+                  <span class="comma"> "</span>         
+                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                  <span class="comma"> "</span>
+                </p>
+                </div>
+                <div class="d-flex mt-4">
+                <div class="user-img" style="background-image: url('/images/person_1.jpg')">
+                </div>
+                <div class="pos ml-3">
+                <p class="name mb-1">Jeff Nucci</p>
+                <span class="text-muted">Businessman</span>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item mb-5"  data-interval="3000" >
+              <div class="item w-100">
+                <div class="testimony-wrap pb-4">
+                <div class="text mb-3 ">
+                <p class="mb-4">
+                  <span class="comma"> "</span>         
+                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                  <span class="comma"> "</span>
+                </p>
+                </div>
+                <div class="d-flex mt-4">
+                <div class="user-img" style="background-image: url('/images/person_1.jpg')">
+                </div>
+                <div class="pos ml-3">
+                <p class="name mb-1">Jeff Nucci</p>
+                <span class="text-muted">Businessman</span>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+  </div>
+</div>
+
+
+
+
+
+<%- include("./partials/footer") %>

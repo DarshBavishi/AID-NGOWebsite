@@ -1,0 +1,108 @@
+<%- include("./partials/header") %>
+<title>Aid | Donate </title>
+
+    <link rel="stylesheet" href="/stylesheets/cover-pic.css">
+    <link rel="stylesheet" href="/stylesheets/donate.css">
+
+
+    <div id="cover-pic" style="  background-image: url(../images/donate1.jfif)">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <div class="container" id="pic">
+            <div id="pic-text-one">Donate to <b>Aid</b><span style="color:#ffb400">.</span></div>
+            <div id="pic-text-two"> Together we can and we will make a difference!</div>
+            <br>
+            <a id="pic-button" class="btn btn-md" href="#donate-box">DONATE</a>
+        </div>
+    </div>
+    <div id="donate-box">
+        <br><br>
+        <br><br>
+        <div class="row mr-0 p-2">
+            <div class=" col-12 col-md-6 " > 
+                <div class="container m-0 donate-cont">
+                    <div class="where">
+                        <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com//qhviklyi.json" trigger="loop"
+                            colors="primary:#121331,secondary:#e8b730" style="width:80px;height:80px">
+                        </lord-icon> Where does your Money go?
+                    </div>
+                    <br>
+                    <br>
+                    <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus esse, eum ullam
+                        delenitimaiores reiciendis praesentium quo est minima tempora illo tempore voluptates quasi?
+                        Architectomaxime nobis praesentium reprehenderit cupiditate.</div>
+                    <br>
+                    <div>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class=" col-12 col-md-6 ">
+                <div class="container donate-cont">
+                    <div class="where">
+                        <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com//yeallgsa.json" trigger="loop"
+                            colors="primary:#121331,secondary:#eeca66" style="width:80px;height:80px">
+                        </lord-icon>Donate Now
+                    </div>
+                    <br>
+                    <br>
+                    <form action="/submitform/donate" method="POST">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+
+                                    <input required type="text" class="form-control" placeholder="Your Name"
+                                        name="name">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+
+                                    <input required type="text" class="form-control" placeholder="Your Email"
+                                        name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input required type="text" class="form-control" placeholder="Enter Amount " name=" amount">
+                        </div>
+                        <div class="form-group">
+                            <label>Donate in honor or in memory of a loved one</label>
+                            <textarea required type="text" class="form-control" placeholder="Donation message"
+                                name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Anonymoues Donation ?</label>
+                            <br>
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="ano">
+                                <small>Check this box to remain anonymous on the donor list.</small><br>
+                            </span>
+
+                        </div>
+
+                        <button class="btn btn-outline-dark" style="color:orange">
+                            <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+                            <lord-icon src="https://cdn.lordicon.com//jvihlqtw.json" trigger="loop"
+                                colors="primary:#eeaa66,secondary:#eeaa66" style="width:20px;height:20px">
+                            </lord-icon> Donate
+                        </button>
+
+
+                    </form>
+                   
+                </div>
+            </div>
+        </div>
+        <br>
+    <br>
+    <br>
+    </div>
+    
+<%- include("./partials/footer") %>

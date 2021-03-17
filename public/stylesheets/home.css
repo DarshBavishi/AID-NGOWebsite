@@ -1,0 +1,292 @@
+#about {
+  background-image: url("https://preview.colorlib.com/theme/aid/images/about.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: contain; */
+  text-align: left;
+  justify-content: end;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 1500px) {
+  #about {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1420px) and (max-width: 1500px) {
+  #about {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1350px) and (max-width: 1420px) {
+  #about {
+    width: 750px;
+    height: 100%;
+  }
+}
+
+/* @media (min-width: 1350px) and (max-width: 1420px) {
+  #about {
+    width: 810px;
+    height: 576px;
+  }
+} */
+
+@media (max-width: 992px) {
+  #about {
+    height: 680px;
+    width: 100%;
+    /* background-size: cover; */
+  }
+}
+
+@media (max-width: 768px) {
+  #about {
+    height: 800px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .col-7 {
+    max-width: 100%;
+  }
+  #about {
+    /* width: 7px; */
+    height: 100%;
+    background-size: cover;
+    padding-bottom: 10px;
+  }
+}
+
+.heading {
+  padding: 10px;
+  color: rgb(85, 85, 85);
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+#about2 {
+  background-color: black;
+  color: rgb(194, 194, 194);
+}
+
+.info2 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+  height: 350px;
+  transition: all 0.8s linear;
+}
+
+.info2:hover {
+  background-color: rgb(255, 196, 0);
+}
+
+.heading2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@media (min-width: 992px) {
+  .h-img {
+    margin-top: -70px;
+  }
+}
+
+.content {
+  padding: 8px;
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 600;
+  color: #999999;
+}
+
+.hover-outer-box {
+  position: relative;
+  display: flex;
+}
+
+.hover-outer-box .hover-inner-box {
+  background: rgba(255, 179, 0, 0.612);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  transition: opacity 0.5s;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.card:hover .hover-inner-box {
+  opacity: 0.9;
+  transition: opacity 1s;
+}
+
+.hover-outer-box .hover-inner-box .hover-content {
+  width: 100%;
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  #recipeCarousel .carousel-inner .carousel-item > div {
+    display: bloc;
+  }
+  #recipeCarousel .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+#recipeCarousel .carousel-inner .carousel-item.active,
+#recipeCarousel .carousel-inner .carousel-item-next,
+#recipeCarousel .carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+  #recipeCarousel .carousel-inner .carousel-item-right.active,
+  #recipeCarousel .carousel-inner .carousel-item-next {
+    transform: translateX(33.333%);
+  }
+
+  #recipeCarousel .carousel-inner .carousel-item-left.active,
+  #recipeCarousel .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.333%);
+  }
+}
+
+#recipeCarousel .carousel-inner .carousel-item-right,
+#recipeCarousel .carousel-inner .carousel-item-left {
+  transform: translateX(0);
+}
+
+.c-heading {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: black;
+}
+
+.heading-section p {
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 700;
+  color: #999999;
+}
+
+@media (min-width: 768px) {
+  .testimony-img {
+    margin-top: -150px;
+  }
+}
+
+@media (min-width: 992px) {
+  .testimony-img {
+    height: 600px;
+    width: 450px;
+  }
+}
+
+@media (max-width: 992px) {
+  .testimony-img {
+    height: 800px;
+    width: 615px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimony-img {
+    height: 400px;
+    width: 100%;
+    overflow-x: visible;
+  }
+}
+
+.testimony-section .testimony-img {
+  display: block;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.testimony-wrap {
+  display: block;
+  position: relative;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+}
+
+.testimony-wrap .text {
+  padding-top: 6em;
+  margin-top: -65px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.testimony-wrap p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.text-muted {
+  font-weight: 500;
+}
+
+.testimony-wrap .user-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  background-position: top center;
+}
+
+.comma {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.user-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.testimonial-header h2 {
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.856);
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1.1;
+}

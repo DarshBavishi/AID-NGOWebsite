@@ -1,0 +1,167 @@
+<%- include("./partials/header") %>
+<title>Aid | <%= currentUser.name%></title>
+<link rel="stylesheet" href="/stylesheets/cover-pic.css" />
+<link rel="stylesheet" href="/stylesheets/profile.css" />
+
+<div id="cover-pic" style="background-image: url(images/profile.jfif)">
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <div class="container" id="pic">
+    <div id="pic-text-one">
+      You and <b>Aid</b><span style="color: #ffb400">.</span>
+    </div>
+    <div id="pic-text-two">
+      and how your contributions touch people's lives !
+    </div>
+    <br />
+    <a id="pic-button" class="btn btn-md" href="#profile">PROFILE</a>
+  </div>
+</div>
+<div class="container" id="profile" style="max-width: 1000px">
+  <br />
+  <br />
+  <h4>
+    <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+    <lord-icon
+      src="https://cdn.lordicon.com//xqnbvely.json"
+      trigger="loop"
+      colors="primary:#121331,secondary:#08a88a"
+      style="width: 80px; height: 80px"
+    >
+    </lord-icon>
+    My Profile
+  </h4>
+  <hr />
+  <h5 class="text-center"> <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+    <lord-icon
+        src="https://cdn.lordicon.com//ssdupzsv.json"
+        trigger="loop"
+        colors="primary:#121331,secondary:#eeca66"
+        style="width:40px;height:40px">
+    </lord-icon>Name: <i><%= currentUser.name %> </i></h5>
+  <h5 class="text-center"> <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+    <lord-icon
+        src="https://cdn.lordicon.com//rhvddzym.json"
+        trigger="loop"
+        colors="primary:#121331,secondary:#08a88a"
+        style="width:40px;height:40px">
+    </lord-icon>Email: <i><%= currentUser.username %> </i></h5>
+  <br />
+  <hr />
+
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="text-center"> <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com//mersmoqu.json"
+            trigger="loop"
+            colors="primary:#121331,secondary:#eeca66"
+            style="width:40px;height:40px">
+        </lord-icon> <b>My Blogs</b></div>
+      <br />
+      <%if(currentUser.blogs.length> 0){ %>
+      <div class="container cont">
+        <div class="row">
+          <% currentUser.blogs.forEach(function(story){ %>
+          <div class="col-12">
+            <div class="card border-0 mb-3" id="card">
+              <div class="row no-gutters">
+                <div class="col-6">
+                  <img src="<%= story.image.url %>" alt="..." />
+                </div>
+                <div class="col-6">
+                  <div class="card-body">
+                    <small class="card-subtitle mb-2 text-muted">
+                      <%= moment(story.date).fromNow() %> &bullet;
+                      <i> <%= story.authorname %></i>
+                    </small>
+                    <h5 class="card-title"><%= story.title %></h5>
+                    <p class="card-text">
+                      <%= story.body.substring(0, 70) %>...
+                    </p>
+                    <a
+                      href="/causes&stories/<%= story._id%>/readmore"
+                      class="btn btn-outline-warning"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%})%>
+        </div>
+      </div>
+      <br />
+      <% }else{ %>
+      <div>You have No Blogs yet!</div>
+      <br />
+      <% } %>
+    </div>
+
+
+
+
+
+
+    <div class="col-12 col-lg-6" id="orders">
+      <div class="text-center"> <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com//slkvcfos.json"
+            trigger="loop"
+            colors="primary:#121331,secondary:#eeca66"
+            style="width:40px;height:40px">
+        </lord-icon> <b>My Orders</b></div>
+      <br />
+      <% if(currentUser.orders.length>0){ %>
+      <div class="container cont">
+        <% for(var i= currentUser.orders.length-1; i>-1;i--){ %> <% var
+        order=currentUser.orders[i] ;%>
+        <button class="accordion">
+          OrderId: <%= (order._id).toString().substring(0,8) %> <br />PlacedOn:
+          <%= order.date.toString().substring(4,15) %>
+        </button>
+        <div class="panel">
+          <br />
+          <% var j=0 %>
+          <% var total=0 %>
+           <% order.items.forEach(function(item){ %>
+          <div class="row justify-content-between" style="text-align: start">
+            <div class="col-1"><%= ++j %>.</div>
+            <small class="col-4"><%= item.title %></small>
+            <div
+              class="col-1"
+              style="
+                background-image: url('<%= item.image %>');
+                background-position: center;
+                text-align: center;
+                height: 30px;
+                background-repeat: no-repeat;
+                background-size: contain;
+              "
+            ></div>
+            <!-- <div class="col-1"></div> -->
+            <small class="col-3 col-md-2">Rs.<%= item.cost %>.00</small>
+            <% total= total+ item.cost %>
+            <div class="col-2 p-0 p-md-2"></div>
+          </div>
+          <br>
+          
+          <% }); %>
+          <small class=" text-center" style="background-color:rgb(107, 255, 126);padding:8px;"> <b> Grand Subtotal</b> : Rs.<%= total %>.00 <br></small>
+           
+        </div>
+        <hr />
+
+        <%} %>
+      </div>
+      <% }else{ %>
+      <div>No Orders Yet</div>
+      <%} %>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+</div>
+<script src="/scripts/profile.js"></script>
+<%- include("./partials/footer") %>

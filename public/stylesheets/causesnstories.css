@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hover-outer-box {
+  position: relative;
+  display: flex;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.hover-outer-box .hover-inner-box {
+  background: rgba(255, 179, 0, 0.612);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  transition: opacity 0.5s;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.card:hover .hover-inner-box {
+  opacity: 0.9;
+  transition: opacity 1s;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 5px gray;
+  transition: all 1s;
+}
+
+.hover-outer-box .hover-inner-box .hover-content {
+  width: 100%;
+  padding: 1rem;
+}
+
+#causes,
+#stories {
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #999999;
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+#card {
+  height: 280px;
+  background-color: rgb(255, 251, 247);
+}
+
+@media (max-width: 500px) {
+  #card {
+    overflow-y: scroll;
+  }
+}

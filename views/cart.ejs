@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Aid | Cart | <%= currentUser.name %></title>
+  </head>
+
+  <body>
+    <br />
+    <div class="container pl-5" style="font-size: 22px">
+      <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+      <lord-icon
+        src="https://cdn.lordicon.com//dxjqoygy.json"
+        trigger="loop"
+        colors="primary:#121331,secondary:#e88c30"
+        style="width: 100px; height: 100px"
+      >
+      </lord-icon>
+      <a href="/store" style="text-decoration: none; color: black"
+        > Shop with <b>Aid<span style="color: rgb(255, 187, 0)">.</span> </b></a
+      >
+    </div>
+
+    <% if(products.length == 0) { %>
+    <div class="container mx-auto px-auto" style="text-align: center">
+      <div style="font-size: x-large; color: orangered">Your cart is empty</div>
+      <small>Your smallest contribution could change someone's life!</small>
+      <br /><br />
+      <div class=" container flash-container">
+        <% if(error && error.length > 0 ) { %>
+        <div class="row d-flex justify-content-between m-2">
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" style="width: 100%;">
+                <%= error %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        </div>
+        <% } %>
+        <% if(success && success.length > 0 ) { %>
+            <div class="row d-flex justify-content-between m-2">
+                <div class="alert alert-success alert-dismissible fade show text-center" role="alert" style="width: 100%;">
+                    <%= success %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    </div>
+    <% } else { %>
+    <div
+      class="container mx-auto px-auto"
+      style="text-align: center;max-width:800px;"
+    >
+      <div style="font-size: x-large; color: orangered">Your cart</div>
+      <small>Because even the smallest contribution matters!</small>
+      <br />
+      <hr />
+      <br />
+      <div class=" container flash-container">
+        <% if(error && error.length > 0 ) { %>
+        <div class="row d-flex justify-content-between m-2">
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" style="width: 100%;">
+                <%= error %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        </div>
+        <% } %>
+        <% if(success && success.length > 0 ) { %>
+            <div class="row d-flex justify-content-between m-2">
+                <div class="alert alert-success alert-dismissible fade show text-center" role="alert" style="width: 100%;">
+                    <%= success %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        <% } %>
+    </div>
+      
+      <div class="card">
+        <div class="card-header text-center">Cart Subtotal</div>
+        <ul class="list-group list-group-flush">
+          <% for(i=0; i< products.length; i++) {%>
+          <li class="list-group-item">
+            <div class="row justify-content-between" style="text-align: start">
+              <div class="col-1"><%= i+1 %>.</div>
+              <div class="col-4"><%= products[i].title %></div>
+              <div
+                class="col-1"
+                style="
+                  background-image: url('<%= products[i].image %>');
+                  background-position: center;
+                  text-align:center;
+                  height: 60px;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                "
+              ></div>
+              <!-- <div class="col-1"></div> -->
+              <div class="col-3 col-md-2">Rs.<%= products[i].cost %>.00</div>
+              <div class="col-2 p-0 p-md-2">
+
+                <form action="/cart/<%= products[i]._id %>?_method=DELETE" method="post">
+                <button type="submit" class="btn btn-outline-danger">
+                  <i class="fas fa-trash-alt"></i>
+              </button>
+            </form>
+              </div>
+            </div>
+          </li>
+          <% } %>
+        </ul>
+        <div class="card-footer text-center"> <b> Grand Subtotal</b> : Rs.<%= total %>.00</div>
+      </div>
+      <br />
+      <a href="/order" class="my-3 btn btn-outline-success btn-lg rounded-2"
+        > <b> Proceed To Payment</b>
+        <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+        <lord-icon
+          src="https://cdn.lordicon.com//vaeagfzc.json"
+          trigger="loop"
+          delay="45"
+          colors="primary:#ffb011,secondary:#ffffff"
+          style="width: 30px; height: 30px"
+        >
+        </lord-icon
+      ></a>
+    </div>
+
+    <% } %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </body>
+</html>
