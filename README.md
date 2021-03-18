@@ -1,4 +1,4 @@
-# NGO
+# NGO WEBSITE
 
 ## Team Members
 
@@ -8,10 +8,12 @@
 
 ## Technology Stack
 
-- MongoDB
-- NodeJS
-- Express
+- HTML/CSS/JS
 - Bootstrap
+- NodeJS
+- ExpressJs
+- MongoDB
+
 
 ## Features
 This is a fully functioning responsive NGO website which motivates people towards charity.
