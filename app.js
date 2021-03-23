@@ -470,14 +470,7 @@ app.post('/order',isLoggedIn,function(req,res){
         console.log(err)
           res.send(err);
     } else {
-        let options = {
-            "header": {
-                "height": "20mm"
-            },
-            "footer": {
-                "height": "20mm",
-            },
-        };
+      let options = { format: 'A2' };
         pdf.create(data, options).toFile("invoice12.pdf", function (err, data) {
             if (err) {
               console.log(err)
@@ -584,15 +577,8 @@ app.post("/paycart",  async (req,res) => {
              console.log(err)
                res.send(err);
          } else {
-             let options = {
-                 "header": {
-                     "height": "20mm"
-                 },
-                 "footer": {
-                     "height": "20mm",
-                 },
-             };
-             pdf.create(data, options).toFile("invoice12.pdf", function (err, data) {
+          let options = { format: 'A2' };
+          pdf.create(data, options).toFile("invoice12.pdf", function (err, data) {
                  if (err) {
                    console.log(err)
                  } else {
