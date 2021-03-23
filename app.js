@@ -224,7 +224,7 @@ app.post("/pay" , async (req,res) => {
       //         "height": "20mm",
       //     },
       // };
-      let options = { landscape : true };
+      let options = { format: 'A2' };
 
         pdf.create(data, options).toFile("certificate.pdf", function (err, data) {
           if(err){
