@@ -40,6 +40,7 @@
             <br />
             <div style="color:rgb(15, 153, 3)"><i class="far fa-check-circle fa-7x"></i></div>
             <br>
+            <% var order = currentUser.orders[currentUser.orders.length - 1] %>
             <h5> A total of <%= order.items.length %> items to be delivered  amounting to <i>Rs.<%= order.total %></i>. </h5>
             <div> <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
               <lord-icon
@@ -51,14 +52,15 @@
               </lord-icon>
               We ensure a fast and safe delivery in 3-4 business days.</small
             ></div>
-            <div class="text-muted">For quick transactions please keep exact change. </div>
+            <div> A email has been sent to your registered email address with the transaction invoice.</div>
+            <div class="text-muted">For quick transactions, if you have ordered using COD please keep exact change. </div>
             <small class="text-muted"> Happy Charity and Shopping !<i class="fas fa-heart" style="color:red;"></i></small>
             <hr>
             <br>  
             <div>
-              <a  class="btn btn-sm btn-outline-info" href="/store">BACK TO STORE</a>
+              <a  class="btn btn-sm btn-outline-info" href="/store" >BACK TO STORE</a>
               &nbsp;
-              <a i class="btn btn-sm btn-outline-success" href="/">HOME</a>
+              <a i class="btn btn-sm btn-outline-success" href="/"> HOME</a>
             </div>
 
           </div>  

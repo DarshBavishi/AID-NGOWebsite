@@ -42,44 +42,47 @@
     </div>
     <br>
 
-    <div class="row">
-        <div class="col-2 col-md-4">
-            <div class="container"></div>
-        </div>
-        <div class=" col-8 col-md-4">
-            <div style="font-size: x-large; color:orangered"> Sign In </div>
-            <small>Welcome back! So happy to see you again !</small>
-            <br><br>
-
-            <form action="/login" method="POST">
-                <div class="form-group">
-                    <label for="exampleInputEmail1"> Your Email *</label>
-                    <input required type="text" class="form-control" placeholder="Enter Email" name="username">
+    <div class="container mt-3 mb-5">
+        <div class="row mx-auto justify-content-between">
+            <div class="col-8 col-lg-5 mx-auto" >
+                <img src="/images/loginj.svg" class="card-img" alt="" srcset="">
+            </div>
+            <div class=" col-8 col-lg-6 mx-auto mt-5 mt-lg-0">
+                <div style="font-size: x-large; color:orangered" class="text-center"> Sign In </div>
+                <div class="text-center">
+                    <small>Welcome back! So happy to see you again !</small>
 
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password *</label>
-                    <input required type="password" class="form-control" placeholder="Password" name="password">
-                </div>
-                <br>
-                <br>
-                <div class="container mx-auto">
-                    <div class="row justify-content-center">
-                        <div class=" col-12 col-md-6">
-                            <span>Don't have an account?</span>
-                            <a href="/signup" style="color:black; text-decoration: underline;">SignUp</a>
-                        </div>
-                        <div class=" col-12 col-md-6">
-                            <button class="btn btn-outline-dark ml-5" style="color:orange">Login</button>
-                        </div>
-
+                <br><br>
+    
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Your Email *</label>
+                        <input required type="text" class="form-control" placeholder="Enter Email" name="username">
+    
                     </div>
-                </div>
-
-            </form>
-        </div>
-        <div class="col-2 col-md-4">
-            <div class="container"></div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password *</label>
+                        <input required type="password" class="form-control" placeholder="Password" name="password">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="container mx-auto">
+                        <div class="row justify-content-center">
+                            <div class=" col-12 col-md-6">
+                                <span>Don't have an account?</span>
+                                <a href="/signup" style="color:black; text-decoration: underline;">SignUp</a>
+                            </div>
+                            <div class=" col-12 col-md-6 mt-3 mt-md-0" >
+                                <button class="btn btn-outline-dark ml-5" style="color:orange">Login</button>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                </form>
+            </div>
+            </div>
         </div>
     </div>
 

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Invoice</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container text-center px-5">
+      <h2>Aid<span style="color: rgb(255, 208, 0)">.</span></h2>
+      <small>Moving towards charity!</small>
+      <br>
+      <b style="font-size:32px;">Your Order Invoice</b>
+      <hr />
+      <br />
+      <br>
+      <div class="container" style="border: 1px solid black">
+        <div class="row">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-4">
+               <u> Billed to :</u>
+              </div>
+              <div class="col-8">
+                <%= user.name %>
+              </div>
+            </div>
+             <br>
+             <div class="row">
+              <div class="col-4">
+                <u> Address:</u>
+               </div>
+               <div class="col-8">
+                 <%= address %>
+               </div>
+             </div>
+             <br>
+           </div>
+          <div class="col-6">
+              <h4 style="border: 1px solid grey;">Invoice No : <%= id %></h4>
+              Billing date : <%= date %>
+              <br>
+              Billed by: Aid. Pvt Limited.
+              <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container px-5">
+      <% var total= 0%>
+      <div class="card">
+        <div class="card-header text-center">Cart Subtotal</div>
+        <ul class="list-group list-group-flush">
+          <% for(i=0; i< products.length; i++) {%> 
+            <% total= total+products[i].cost %>
+          <li class="list-group-item">
+            <div class="row justify-content-between" style="text-align: start">
+              <div class="col-1"><%= i+1 %>.</div>
+              <div class="col-4"><%= products[i].title %></div>
+              <div
+                class="col-1"
+                style="
+                  background-image: url('<%= products[i].image %>');
+                  background-position: center;
+                  text-align: center;
+                  height: 60px;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                "
+              ></div>
+              <!-- <div class="col-1"></div> -->
+              <div class="col-3 col-md-2">Rs.<%= products[i].cost %>.00</div>
+              <div class="col-2 p-0 p-md-2"></div>
+            </div>
+          </li>
+          <% } %>
+        </ul>
+        <div class="card-footer text-center">
+          <b> Grand Subtotal</b> : Rs.<%= total %>.00
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container px-5">
+      <div class="text-muted">* Prices are GST included.</div>
+      <small>
+        I/We agree and accept the services provided by Aid at my/our request to
+        carry out my bill payments on my/our account, given by me/us from time to
+        time. I/We agree to provide my/our correct identification details as
+        registered with the billing company. I/We agree to indemnify the
+        organization from any liability due to incorrect information in this
+        regard. I/We also agree to communicate any change in identification
+        details as registered with Aid. I/We have no objection whatsoever, to Aid.
+        providing my/our billing details.The product carries only manufacturer’s
+        warranty and no return or exchange will be entertained.
+      </small>
+      <br>
+      <b> Thank you for shopping with us </b>
+      <h5> <i> Best Regards, <b>Aid</b> <span style="color:rgb(255, 217, 0);">.</span> </h5>
+        <br>
+        <br>
+        <small class="text-center">****************This is a system generated invoice **************</small>
+        <br>
+    </div>
+    
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

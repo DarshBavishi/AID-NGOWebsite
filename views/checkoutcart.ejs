@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <title>Aid</title>
+    <link rel="stylesheet" href="/stylesheets/checkout.css">
+  </head>
+
+<body>
+  <br>
+  <div class="container pl-5" style="font-size: 22px">
+    <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+    <lord-icon
+      src="https://cdn.lordicon.com//dxjqoygy.json"
+      trigger="loop"
+      colors="primary:#121331,secondary:#e88c30"
+      style="width: 100px; height: 100px"
+    >
+    </lord-icon>
+    <a href="/store" style="text-decoration: none; color: black"
+      > Shop with <b>Aid<span style="color: rgb(255, 187, 0)">.</span> </b></a
+    >
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <div
+  class="container mx-auto px-auto"
+  style="text-align: center;max-width:800px;"
+>
+  <div style="font-size: x-large; color: orangered">Please fill in your Credit Card Details to Complete the Payment</div>
+  <small>Because even the smallest contribution matters!</small>
+  <br />
+  <hr />
+  <br />
+</div>
+
+ <div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 mt-0 pt-0">
+      <div class="sr-root">
+        <div class="sr-main">
+          <h3 class="text-center">Order Payment</h3>
+          <form id="payment-form" class="sr-payment-form">
+            <div class="sr-combo-inputs-row">
+              <div class="sr-input sr-card-element" id="card-element"></div>
+            </div>
+            <div class="sr-field-error" id="card-errors" role="alert"></div>
+            <button id="submit">
+              <div class="spinner hidden" id="spinner"></div>
+              <span id="button-text">Pay Rs. <%= currentUser.cart.total %></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>  
+</div>
+
+
+<script>
+
+  var orderData = {
+    items: [{ id: "aid-order-pay" }],
+    name : "<%= orderObj.name %>" ,
+    address : "<%= orderObj.address %>" ,
+    currency: "inr"
+  };
+
+  var stripe = Stripe('pk_test_51IWLOeCYvekY4ZkChgBVF0S4eJ7XjsTnD0ZnM5wLK5D4KOMjpgEiXcMkxEvAInRPhDl4CgCaAKQ6lquq0lfCoQHQ003DF2zj6w');
+  var elements = stripe.elements();
+  // Set up Stripe.js and Elements to use in checkout form
+  var elements = stripe.elements();
+  var style = {
+  base: {
+      color: "#32325d",
+  }
+  };
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  var displayError = document.getElementById('card-errors');
+  async function errorHanlder(err) {
+    if(err == "You need to be logged in first"){
+      err=err+" Redirecting to Login Page ";
+      displayError.textContent = err;
+      await sleep(4000);
+      window.location.href = "/login";
+    } else {
+      changeLoadingState(false);
+      displayError.textContent = err;
+    }
+    changeLoadingState(false);
+      displayError.textContent = err;
+  }
+  var card = elements.create("card", { style: style });
+  card.mount("#card-element");   
+  card.on('change', function(event) {
+    if (event.error) {
+      errorHanlder(event.error.message);
+    } else {
+      errorHanlder('');
+    }
+  });
+
+var form = document.getElementById('payment-form');
+
+form.addEventListener('submit', function(ev) {
+  ev.preventDefault();
+  changeLoadingState(true);
+    stripe.createPaymentMethod("card",card)
+        .then(function(result) {
+          if (result.error) {
+            errorHanlder(result.error.message);
+          } else {
+            orderData.paymentMethodId = result.paymentMethod.id;
+
+            return fetch("/paycart" , {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(orderData)
+            });
+          }
+        })
+        .then(function(result) {
+          return result.json();
+        })
+        .then(function(response) {
+          if (response.error) {
+            errorHanlder(response.error);
+          } else {
+            
+            window.location.href = "/orderconfirmed"  
+          }
+        }).catch(function(err){
+          errorHanlder(err.error);
+        });
+});
+
+function changeLoadingState(isLoading) {
+  if (isLoading) {
+    document.querySelector("button").disabled = true;
+    document.querySelector("#spinner").classList.remove("hidden");
+    document.querySelector("#button-text").classList.add("hidden");
+  } else {
+    document.querySelector("button").disabled = false;
+    document.querySelector("#spinner").classList.add("hidden");
+    document.querySelector("#button-text").classList.remove("hidden");
+  }
+};
+
+</script>
+
+</body>
+</html>

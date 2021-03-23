@@ -17,7 +17,7 @@
     <div id="donate-box">
         <br><br>
         <br><br>
-        <div class="row mr-0 p-2">
+        <div class="row mx-auto mr-md-0 p-2">
             <div class=" col-12 col-md-6 " > 
                 <div class="container m-0 donate-cont">
                     <div class="where">
@@ -28,21 +28,22 @@
                     </div>
                     <br>
                     <br>
-                    <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus esse, eum ullam
-                        delenitimaiores reiciendis praesentium quo est minima tempora illo tempore voluptates quasi?
-                        Architectomaxime nobis praesentium reprehenderit cupiditate.</div>
+                    <div>Aid is committed to high standards of accountability and transparency.Your generous donations go towards implementation of our programmes, administration and fundraising.</div>
                     <br>
                     <div>
                         <ul>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                            <li>85% of donations go to our programmes.</li>
+                            <li>4% go to FundRaising events.</li>
+                            <li>4% go to Monitoring and Evaluation</li>
+                            <li>7% go to Administration</li>
+        
                         </ul>
                     </div>
+                    <u>We ensure that every single Penny what you donate will be solely used for Charity purpose.</u>
 
                 </div>
             </div>
-            <div class=" col-12 col-md-6 ">
+            <div class=" col-12 col-md-6 mt-4 mt-md-0">
                 <div class="container donate-cont">
                     <div class="where">
                         <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
@@ -52,30 +53,31 @@
                     </div>
                     <br>
                     <br>
-                    <form action="/submitform/donate" method="POST">
+                    <form action="/donate" method="POST">
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
 
                                     <input required type="text" class="form-control" placeholder="Your Name"
-                                        name="name">
+                                        name="name" required>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
 
                                     <input required type="text" class="form-control" placeholder="Your Email"
-                                        name="email">
+                                        name="email" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input required type="text" class="form-control" placeholder="Enter Amount " name=" amount">
+                            <label>Donate in honor or in memory of a loved one</label>
+                            <textarea type="text" class="form-control" placeholder="Donation message"
+                                name="message"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Donate in honor or in memory of a loved one</label>
-                            <textarea required type="text" class="form-control" placeholder="Donation message"
-                                name="message"></textarea>
+                            <label>How much do you want to Donate ? (In Rs.)</label>
+                            <input type="number" class="form-control" name="amount" min=10 step="10" required>
                         </div>
                         <div class="form-group">
                             <label>Anonymoues Donation ?</label>

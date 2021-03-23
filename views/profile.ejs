@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/stylesheets/cover-pic.css" />
 <link rel="stylesheet" href="/stylesheets/profile.css" />
 
-<div id="cover-pic" style="background-image: url(images/profile.jfif)">
+<div id="cover-pic" style="background-image: url(images/profile.jpg)">
   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   <div class="container" id="pic">
     <div id="pic-text-one">
@@ -37,14 +37,14 @@
         trigger="loop"
         colors="primary:#121331,secondary:#eeca66"
         style="width:40px;height:40px">
-    </lord-icon>Name: <i><%= currentUser.name %> </i></h5>
+    </lord-icon><i><%= currentUser.name %> </i></h5>
   <h5 class="text-center"> <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
     <lord-icon
         src="https://cdn.lordicon.com//rhvddzym.json"
         trigger="loop"
         colors="primary:#121331,secondary:#08a88a"
         style="width:40px;height:40px">
-    </lord-icon>Email: <i><%= currentUser.username %> </i></h5>
+    </lord-icon><i><%= currentUser.username %> </i></h5>
   <br />
   <hr />
 
@@ -61,7 +61,8 @@
       <%if(currentUser.blogs.length> 0){ %>
       <div class="container cont">
         <div class="row">
-          <% currentUser.blogs.forEach(function(story){ %>
+          
+          <% stories.forEach(function(story){ %>
           <div class="col-12">
             <div class="card border-0 mb-3" id="card">
               <div class="row no-gutters">
@@ -93,7 +94,7 @@
       </div>
       <br />
       <% }else{ %>
-      <div>You have No Blogs yet!</div>
+      <div class="text-center">You have No Blogs yet!</div>
       <br />
       <% } %>
     </div>
@@ -116,46 +117,48 @@
       <div class="container cont">
         <% for(var i= currentUser.orders.length-1; i>-1;i--){ %> <% var
         order=currentUser.orders[i] ;%>
-        <button class="accordion">
-          OrderId: <%= (order._id).toString().substring(0,8) %> <br />PlacedOn:
-          <%= order.date.toString().substring(4,15) %>
-        </button>
-        <div class="panel">
-          <br />
-          <% var j=0 %>
-          <% var total=0 %>
-           <% order.items.forEach(function(item){ %>
-          <div class="row justify-content-between" style="text-align: start">
-            <div class="col-1"><%= ++j %>.</div>
-            <small class="col-4"><%= item.title %></small>
-            <div
-              class="col-1"
-              style="
-                background-image: url('<%= item.image %>');
-                background-position: center;
-                text-align: center;
-                height: 30px;
-                background-repeat: no-repeat;
-                background-size: contain;
-              "
-            ></div>
-            <!-- <div class="col-1"></div> -->
-            <small class="col-3 col-md-2">Rs.<%= item.cost %>.00</small>
-            <% total= total+ item.cost %>
-            <div class="col-2 p-0 p-md-2"></div>
-          </div>
-          <br>
-          
-          <% }); %>
-          <small class=" text-center" style="background-color:rgb(107, 255, 126);padding:8px;"> <b> Grand Subtotal</b> : Rs.<%= total %>.00 <br></small>
-           
-        </div>
-        <hr />
 
+        <% if(order.total > 0) { %> 
+          <button class="accordion">
+            OrderId: <%= (order._id).toString().substring(0,8) %> <br />PlacedOn:
+            <%= order.date.toString().substring(4,15) %>
+          </button>
+          <div class="panel">
+            <br />
+            <% var j=0 %>
+            <% var total=0 %>
+             <% order.items.forEach(function(item){ %>
+            <div class="row justify-content-between" style="text-align: start">
+              <div class="col-1"><%= ++j %>.</div>
+              <small class="col-4"><%= item.title %></small>
+              <div
+                class="col-1"
+                style="
+                  background-image: url('<%= item.image %>');
+                  background-position: center;
+                  text-align: center;
+                  height: 30px;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                "
+              ></div>
+              <!-- <div class="col-1"></div> -->
+              <small class="col-3 col-md-2">Rs.<%= item.cost %>.00</small>
+              <% total= total+ item.cost %>
+              <div class="col-2 p-0 p-md-2"></div>
+            </div>
+            <br>
+            
+            <% }); %>
+            <small class=" text-center" style="background-color:rgb(107, 255, 126);padding:8px;"> <b> Grand Subtotal</b> : Rs.<%= total %>.00 <br></small>
+             
+          </div>
+          <hr />          
+        <% } %>  
         <%} %>
       </div>
       <% }else{ %>
-      <div>No Orders Yet</div>
+      <div class="text-center">No Orders Yet</div>
       <%} %>
     </div>
   </div>

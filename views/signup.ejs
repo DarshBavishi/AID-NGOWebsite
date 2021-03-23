@@ -12,17 +12,15 @@
 </head>
 
 <body>
-    <br>
     <div class="container pl-5" style="font-size: 22px;">
         <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
         <lord-icon src="https://cdn.lordicon.com//dxjqoygy.json" trigger="loop"
             colors="primary:#121331,secondary:#e88c30" style="width:100px;height:100px">
-        </lord-icon>Welcome to <b>Aid<span style="color:rgb(255, 187, 0)">.</span>  </b>
+        </lord-icon> <a style="text-decoration: none; color: black;"  href="/">Welcome to <b>Aid<span style="color:rgb(255, 187, 0)">.</span> </b></a> 
     </div>
     <div class="container mx-auto px-auto" style="text-align: center;">
         <div style="font-size: x-large; color:orangered"> Sign Up </div>
         <small>Be the change that you want to see in the world !</small>
-        <br><br>
     </div>
     <div class=" container flash-container my-3 ">
         <% if(error && error.length > 0 ) { %>
@@ -46,52 +44,65 @@
             </div>
         <% } %>
     </div>
-           
-            <form action="/signup" method="POST">
-                <div class="container mx-auto px-auto " style="max-width: 600px;">
+
+    <div class="container">
+        <div class="row mx-auto justify-content-between">
+            <div class="col-8 col-lg-5 mx-auto" >
+                <img src="/images/signup.svg" class="card-img" alt="" srcset="">
+            </div>
+            <div class=" col-8 col-lg-6 mx-auto mt-5 mt-lg-0">
+                <form action="/signup" method="POST">
+                    <div class="container mx-auto px-auto " style="max-width: 600px;">
+                        
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1"> <small>Your Name *</small> </label>
+                                    <input required type="text" class="form-control" placeholder="Enter Name" name="name" required>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1"><small> Your Email *</small></label>
+                                    <input required type="text" class="form-control" placeholder="Enter Email" name="username" required>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1"> <small>Your Phone Number *</small></label>
+                                    <input required type="text" class="form-control" placeholder="+91 xxxxxxxx"
+                                        name="phone" required>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1"> <small> Password *</small></label>
+                                    <input required type="password" class="form-control" placeholder="Password"
+                                        name="password" required>
+                                </div>
+                            
+            
+                    </div>
+                    <br>
+                    <div class="container mx-auto " style="text-align: center;">
+                            <button class="btn btn-outline-dark btn-lg ml-2" style="color:orange">
+                                <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com//jvihlqtw.json"
+                                    trigger="loop"
+                                    colors="primary:#ffb400,secondary:#ffb400"
+                                    style="width:30px;height:30px">
+                                </lord-icon>
+                                &nbsp;Sign Up
+                            </button>
+                        <br>
+                    </div>
+            
+            
+                    <br>
                     
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"> <small>Your Name *</small> </label>
-                                <input required type="text" class="form-control" placeholder="Enter Name" name="name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"><small> Your Email *</small></label>
-                                <input required type="text" class="form-control" placeholder="Enter Email" name="username" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"> <small>Your Phone Number *</small></label>
-                                <input required type="text" class="form-control" placeholder="+91 xxxxxxxx"
-                                    name="phone" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputPassword1"> <small> Password *</small></label>
-                                <input required type="password" class="form-control" placeholder="Password"
-                                    name="password" required>
-                            </div>
-                       
-
-                </div>
-                <br>
-                <br>
-                <div class="container ml-5 " style="text-align: center;">
-                        <button class="btn btn-outline-dark ml-5" style="color:orange">
-                            <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
-                            <lord-icon src="https://cdn.lordicon.com//jvihlqtw.json" trigger="loop"
-                                colors="primary:#eeaa66,secondary:#eeaa66"
-                                style="width:50px;height:50px; font-size:bold;">
-                            </lord-icon>Sign Up
-                        </button>
-                    <br><br>
-                </div>
-
-
-                <br>
-                
-
-            </form>
+            
+                </form>
+            </div>
+        </div>
+    </div>
+           
+    
         
 
 

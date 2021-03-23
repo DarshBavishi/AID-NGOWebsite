@@ -31,7 +31,7 @@ html {
   transition: opacity 1s;
 }
 
-.card:hover {
+#card:hover {
   box-shadow: 2px 2px 5px gray;
   transition: all 1s;
 }
@@ -68,7 +68,8 @@ html {
 
 #card {
   height: 280px;
-  background-color: rgb(255, 251, 247);
+  background-color: rgb(255, 248, 240);
+  border-right: 1px solid grey;
 }
 
 @media (max-width: 500px) {
