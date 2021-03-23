@@ -216,14 +216,16 @@ app.post("/pay" , async (req,res) => {
         console.log(err)
         res.send({error : err});
       }else{
-        let options = {
-          "header": {
-              "height": "10mm"
-          },
-          "footer": {
-              "height": "20mm",
-          },
-      };
+      //   let options = {
+      //     "header": {
+      //         "height": "10mm"
+      //     },
+      //     "footer": {
+      //         "height": "20mm",
+      //     },
+      // };
+      let options = { format: 'A4' };
+
         pdf.create(data, options).toFile("certificate.pdf", function (err, data) {
           if(err){
             console.log(err);
