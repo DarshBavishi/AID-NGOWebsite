@@ -202,7 +202,7 @@
   <br />
   <div class="row justify-content-center mx-auto">
     <% if( stories.length >0){ %>
-      <% for(var i=0;i< 6;i++){ %>
+      <% for(var i=0; i < 6; i++){ %>
         <div class="col-12 col-lg-6 my-2">
           <div  data-aos="zoom-in-up" data-aos-duration="1300"   class="card border-0 mb-3" id="card">
             <div class="row no-gutters">
@@ -215,7 +215,7 @@
                     <%= moment(stories[i].date).fromNow() %> &bullet;
                     <i> <%= stories[i].authorname %></i>
                   </small>
-                  <h5 class="card-title"><%= stories[i].title %></h5>
+                  <h6 class="card-title" style="max-height:110px;overflow-y:hidden;"><%= stories[i].title %></h6>
                   <p class="card-text"><%= stories[i].body.substring(0, 70) %>...</p>
                   <a
                     href="/causes&stories/<%= stories[i]._id%>/readmore"
@@ -227,7 +227,7 @@
             </div>
           </div>
         </div>
-      <%}%>
+      <% } %>
     <% }else{ %>
       <div>You have No stories to see!</div>
     <% } %>
@@ -255,7 +255,7 @@
                       <%= moment(stories[i].date).fromNow() %> &bullet;
                       <i> <%= stories[i].authorname %></i>
                     </small>
-                    <h5 class="card-title"><%= stories[i].title %></h5>
+                    <h6 class="card-title" style="max-height:110px;overflow-y:hidden;"><%= stories[i].title %></h6>
                     <p class="card-text"><%= stories[i].body.substring(0, 70) %>...</p>
                     <a
                       href="/causes&stories/<%= stories[i]._id%>/readmore"

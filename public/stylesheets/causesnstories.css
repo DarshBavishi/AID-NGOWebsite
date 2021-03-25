@@ -62,12 +62,12 @@ html {
 
 .card img {
   width: 100%;
-  height: 280px;
+  height: 300px !important;
   object-fit: cover;
 }
 
 #card {
-  height: 280px;
+  height: 300px;
   background-color: rgb(255, 248, 240);
   border-right: 1px solid grey;
 }

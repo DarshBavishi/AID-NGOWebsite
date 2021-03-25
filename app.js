@@ -132,10 +132,11 @@ app.get("/causes&stories", function (req, res) {
     if (err) {
       console.log(err);
     } else {
+      console.log('-------------------------------------------');
+      console.log(allposts);
       res.render("causes&stories", { stories: allposts });
     }
-  })
-    .sort({ date: "desc" })
+  }).sort({ date: "desc" })
 });
 
 app.get("/aboutus",function(req,res){
